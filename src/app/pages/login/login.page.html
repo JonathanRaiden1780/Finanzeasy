@@ -1,0 +1,52 @@
+<ion-card style="margin: auto;" >
+  <ion-card-header>
+    <ion-card-title>Iniciar Sesión</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-grid fixed>
+      <form [formGroup]="formLogin" (ngSubmit)="onLogin()">
+        <ion-item style="border: none; outline: none;">
+          <ion-input label="Email" labelPlacement="stacked" [clearInput]="true" placeholder="email@domain.com"
+            required="true" type="email" formControlName="email">
+            <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Contraseña" labelPlacement="stacked" [clearInput]="true" required="true" type="password"
+            formControlName="password">
+            <ion-icon slot="start" name="lock-closed-outline" aria-hidden="true"></ion-icon>
+          </ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <p class="ion-text-end">
+              <a routerLink="/forgot-password">¿Olvidaste contraseña? </a>
+            </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="block">Inicia Sesión</ion-button>
+          </ion-col>
+        </ion-row>
+        <div style="text-align: center;">
+          <span> o </span>
+        </div>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" color="danger" (click)="onLoginGoogle()" expand="block">Inicia sesión con Google
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+      <ion-row>
+        <ion-col>
+          <p class="ion-text-end">            
+            <a routerLink="/register">Create an account </a>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  </ion-card-content>
+</ion-card>
