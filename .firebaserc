@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "finanzeasy-71d73": {
+      "hosting": {
+        "app": [
+          "finanzeasy-71d73"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "finanzeasy-71d73"
+  }
+}
