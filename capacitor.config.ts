@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'Finanzeasy',
-  webDir: 'www',
+  webDir: 'www\browser',
   server: {
     androidScheme: 'https'
   }
