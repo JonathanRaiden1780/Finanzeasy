@@ -19,9 +19,7 @@ export class AuthService {
     var session = authState(this.auth)
     setTimeout(() => {
       session.subscribe({
-        next: (data) => {
-          console.log(data);
-          
+        next: (data) => {          
           if (data)
             this.router.navigate(['/home']);
           else
@@ -78,7 +76,6 @@ export class AuthService {
     catch (error: unknown) {
       this.commonServ.closeLoading();
       const { code, message } = error as ErrorResponse;
-      console.log(message);
       if(message.includes('invalid-credential'))
         alert('Error al ingresar, credenciales invalidas')
       console.log("code: ", code, " message: ", message);
