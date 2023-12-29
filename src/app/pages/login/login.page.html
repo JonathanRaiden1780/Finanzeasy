@@ -1,4 +1,4 @@
-<ion-card style="margin: auto;" >
+<ion-card style="margin: auto;">
   <ion-card-header>
     <ion-card-title>Iniciar Sesión</ion-card-title>
   </ion-card-header>
@@ -20,8 +20,38 @@
         <ion-row>
           <ion-col>
             <p class="ion-text-end">
-              <a routerLink="/forgot-password">¿Olvidaste contraseña? </a>
+              <a  (click)="setModal(true)">¿Olvidaste contraseña? </a>
             </p>
+            <ion-modal [isOpen]="isModalOpen" #modal [canDismiss]="canDismiss" [presentingElement]="presentingElement" >
+              <ng-template>
+                <ion-content class="ion-padding">
+                  <div style="text-align: center;">
+                    <h1>¿Olvidaste tu contraseña?</h1>
+                    <h1>Ingresa tu correo para recuperar tu acceso</h1>
+                  </div>
+                  <br>
+                  <form [formGroup]="formLogin" (ngSubmit)="onLogin()">
+                    <ion-item style="border: none; outline: none;">
+                      <ion-input label="Email" labelPlacement="stacked" [clearInput]="true"
+                        placeholder="email@domain.com" required="true" type="email" formControlName="email">
+                        <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+                      </ion-input>
+                    </ion-item>
+                    <br>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                          <ion-button size="large" color="danger" fill="solid" (click)="setModal(false)" expand="block">Cancelar</ion-button>
+                        </ion-col>
+                        <ion-col>
+                          <ion-button size="large" color="primary" fill="solid" (click)="confirm()" expand="block">Recupera tu contraseña</ion-button>  
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </form>
+                </ion-content>
+              </ng-template>
+            </ion-modal>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -34,19 +64,18 @@
         </div>
         <ion-row>
           <ion-col>
-            <ion-button type="submit" color="danger" (click)="onLoginGoogle()" expand="block">Inicia sesión con Google
+            <ion-button color="danger" (click)="onLoginGoogle()" expand="block">Inicia sesión con Google
             </ion-button>
           </ion-col>
         </ion-row>
       </form>
       <ion-row>
         <ion-col>
-          <p class="ion-text-end">            
-            <a routerLink="/register">Create an account </a>
+          <p class="ion-text-end">
+            <a routerLink="/register">Registrate </a>
           </p>
         </ion-col>
       </ion-row>
     </ion-grid>
-   
   </ion-card-content>
 </ion-card>
