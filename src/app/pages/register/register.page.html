@@ -4,7 +4,7 @@
   </ion-card-header>
   <ion-card-content>
     <ion-grid fixed>
-      <form [formGroup]="formLogin" (ngSubmit)="onLogin()">
+      <form [formGroup]="formLogin" (ngSubmit)="signUp()">
         <ion-item style="border: none; outline: none;">
           <ion-input label="Email" labelPlacement="stacked" [clearInput]="true" placeholder="email@domain.com"
             required="true" type="email" formControlName="email">

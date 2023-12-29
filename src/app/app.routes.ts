@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
   },
+  {
+    path: 'verify-email',
+    loadComponent: () => import('./pages/verify-email/verify-email.page').then( m => m.VerifyEmailPage)
+  },
 ];
